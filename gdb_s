@@ -1,0 +1,6 @@
+set architecture i386:x86-64
+add-symbol-file rom32offset.o
+target remote :1234
+hb enteraccs
+#hb __enter_longmode
+#hb *0xe7637

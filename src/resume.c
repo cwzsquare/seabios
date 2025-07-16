@@ -151,6 +151,11 @@ handle_resume32(int status)
 
     if (status == 0xfe)
         s3_resume();
+    // debug use for status 0x0
+    if (status == 0x0){
+	dprintf(1, "Could not reboot because of status 0x0\n");
+	while(1){}
+    }
 
     // Must be a soft reboot - invoke a hard reboot.
     tryReboot();
